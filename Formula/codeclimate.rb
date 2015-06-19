@@ -10,7 +10,7 @@ class Codeclimate < Formula
   def install
     # Alter PATH to ensure `docker' is available
     system "env", \
-      "PATH=/usr/local/bin:#{ENV["PATH"]}", \
+      "PATH=#{HOMEBREW_PREFIX}/bin:#{ENV["PATH"]}", \
       "PREFIX=#{prefix}", "make", "install"
   end
 

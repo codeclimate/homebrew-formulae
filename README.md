@@ -15,7 +15,9 @@ brew install <formula>
 
 ### Code Climate CLI
 
-The Code Climate CLI requires docker. If you are using Boot2Docker, run:
+The [Code Climate CLI][cli] requires docker. If you are using Boot2Docker, run:
+
+[cli]: https://github.com/codeclimate/codeclimate
 
 ```console
 boot2docker up

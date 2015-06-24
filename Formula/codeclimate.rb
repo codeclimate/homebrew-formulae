@@ -2,10 +2,10 @@ require "formula"
 
 class Codeclimate < Formula
   homepage "https://github.com/codeclimate/codeclimate"
-  version "0.0.7"
+  version "0.0.8"
 
-  url "https://github.com/codeclimate/codeclimate/archive/v0.0.7.tar.gz"
-  sha1 "9e2b70d12d89ba85cc0174fed5aa473b500a5f12"
+  url "https://github.com/codeclimate/codeclimate/archive/v0.0.8.tar.gz"
+  sha1 "5e55477cdfa77d8fca8f80df8b8b60d43615aacd"
 
   def install
     # Alter PATH to ensure `docker' is available

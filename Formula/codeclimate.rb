@@ -1,13 +1,13 @@
 require "formula"
 
 class Codeclimate < Formula
-  CODECLIMATE_VERSION = "0.0.14".freeze
+  CODECLIMATE_VERSION = "0.0.15".freeze
 
   homepage "https://github.com/codeclimate/codeclimate"
   version CODECLIMATE_VERSION
 
   url "https://github.com/codeclimate/codeclimate/archive/v#{CODECLIMATE_VERSION}.tar.gz"
-  sha1 "edb84f3c9afe42a1d76f33829e7c300620102586"
+  sha1 "9442fcfa11db78b3fb03493f4111f08986174caf"
 
   def install
     # Alter PATH to ensure `docker' is available

@@ -7,7 +7,7 @@ class Codeclimate < Formula
   version CODECLIMATE_VERSION
 
   url "https://github.com/codeclimate/codeclimate/archive/v#{CODECLIMATE_VERSION}.tar.gz"
-  sha1 "6cdbcdfa32995923eb8a881f3b358447ce22b373"
+  sha1 "29a73e1bfea048a26de5a7be28d83fda15ba2ba9"
 
   def install
     # Alter PATH to ensure `docker' is available

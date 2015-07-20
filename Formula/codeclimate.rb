@@ -1,7 +1,7 @@
 require "formula"
 
 class Codeclimate < Formula
-  CODECLIMATE_VERSION = "0.1.0".freeze
+  CODECLIMATE_VERSION = "0.1.1".freeze
 
   homepage "https://github.com/codeclimate/codeclimate"
   version CODECLIMATE_VERSION

@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# Update the Formula for a new version.
+#
+# Usage: bin/release VERSION
+#
+# Requires sha1sum be installed.
+#
+###
+set -e
+
+if [ -z "$1" ]; then
+  echo "usage: bin/release VERSION" >&2
+  exit 64
+fi
+
+version=$1
+formula=Formula/codeclimate.rb
+sha1=$(curl -sL "https://github.com/codeclimate/codeclimate/archive/v$version.tar.gz" | sha1sum | cut -d " " -f 1)
+
+git checkout master
+git pull
+
+sed -i 's/^\(.*CODECLIMATE_VERSION = "\).*\(".*\)$/\1'"$version"'\2/' "$formula"
+sed -i 's/^\(.*sha1 "\).*\(".*\)$/\1'"$sha1"'\2/' "$formula"
+
+git add Formula/codeclimate.rb
+git commit -m "Release v$version"
+git show
+git push

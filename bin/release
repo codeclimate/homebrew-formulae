@@ -16,15 +16,23 @@ fi
 
 version=$1
 formula=Formula/codeclimate.rb
+
+if ![ command -v sha1sum > /dev/null 2>&1 ]; then
+  echo "Please install the md5sha1sum package (`brew install md5sha1sum` on OS X)."
+  exit 1
+fi
+
+
 sha1=$(curl -sL "https://github.com/codeclimate/codeclimate/archive/v$version.tar.gz" | sha1sum | cut -d " " -f 1)
 
 git checkout master
 git pull
 
-sed -i 's/^\(.*CODECLIMATE_VERSION = "\).*\(".*\)$/\1'"$version"'\2/' "$formula"
-sed -i 's/^\(.*sha1 "\).*\(".*\)$/\1'"$sha1"'\2/' "$formula"
+sed 's/^\(.*CODECLIMATE_VERSION = "\).*\(".*\)$/\1'"$version"'\2/' "$formula" > "$formula.modified"
+sed 's/^\(.*sha1 "\).*\(".*\)$/\1'"$sha1"'\2/' "$formula.modified" > "$formula"
+rm "$formula.modified"
 
-git add Formula/codeclimate.rb
-git commit -m "Release v$version"
-git show
-git push
+# git add Formula/codeclimate.rb
+# git commit -m "Release v$version"
+# git show
+# git push

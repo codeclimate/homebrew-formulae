@@ -17,7 +17,7 @@ fi
 version=$1
 formula=Formula/codeclimate.rb
 
-if ![ command -v sha1sum > /dev/null 2>&1 ]; then
+if ! command -v sha1sum > /dev/null 2>&1; then
   echo "Please install the md5sha1sum package (`brew install md5sha1sum` on OS X)."
   exit 1
 fi

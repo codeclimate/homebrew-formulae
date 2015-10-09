@@ -32,7 +32,7 @@ sed 's/^\(.*CODECLIMATE_VERSION = "\).*\(".*\)$/\1'"$version"'\2/' "$formula" > 
 sed 's/^\(.*sha1 "\).*\(".*\)$/\1'"$sha1"'\2/' "$formula.modified" > "$formula"
 rm "$formula.modified"
 
-# git add Formula/codeclimate.rb
-# git commit -m "Release v$version"
-# git show
-# git push
+git add "$formula"
+git commit -m "Release v$version"
+git show
+git push

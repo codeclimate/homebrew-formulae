@@ -7,31 +7,19 @@
 ## Usage
 
 ```console
-brew tap codeclimate/formulae
-brew install <formula>
+$ brew tap codeclimate/formulae
+$ brew install <formula>
+```
+
+To update the brew package, use brew update first:
+
+```console
+$ brew update
+$ brew upgrade codeclimate
 ```
 
 ## Available Formulae
 
-### Code Climate CLI
-
-The [Code Climate CLI][cli] requires docker. If you are using Boot2Docker, run:
+- [Code Climate CLI][cli]
 
 [cli]: https://github.com/codeclimate/codeclimate
-
-```console
-boot2docker up
-eval "$(boot2docker shellinit)"
-```
-
-This will set environment variables for your current session. To ensure these
-are loaded automatically in the future, these variables should be set in your
-`.bash_profile` or `.zsh_profile`. If these variables have already been added to
-your profile, you will be told `Your environment variables are already set
-correctly.`
-
-Once you have those in your shell profile, run:
-
-```console
-brew install codeclimate
-```

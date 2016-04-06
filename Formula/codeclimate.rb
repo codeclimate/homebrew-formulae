@@ -1,19 +1,18 @@
-require "formula"
-
 class Codeclimate < Formula
-  CODECLIMATE_VERSION = "0.24.2".freeze
-
+  desc "Code Climate CLI"
   homepage "https://github.com/codeclimate/codeclimate"
-  version CODECLIMATE_VERSION
-
-  url "https://github.com/codeclimate/codeclimate/archive/v#{CODECLIMATE_VERSION}.tar.gz"
-  sha1 "c28ce24aea878ecd8b1bd65cc313206bcd36aece"
+  url "https://github.com/codeclimate/codeclimate/archive/v0.24.2.tar.gz"
+  sha256 "f6ab47d602c8a6ec2d4e9f86df829cc31c3059ad025058c7646499b154242351"
 
   def install
     # Alter PATH to ensure `docker' is available
-    system "env", \
-      "PATH=#{HOMEBREW_PREFIX}/bin:#{ENV["PATH"]}", \
-      "PREFIX=#{prefix}", "make", "install"
+    if Formula["docker"].linked_keg.exist?
+      ENV.prepend_path "PATH", Formula["docker"].opt_bin
+    end
+
+    ENV["PREFIX"] = prefix
+
+    system "make", "install"
   end
 
   test do

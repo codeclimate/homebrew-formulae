@@ -8,6 +8,8 @@ class Codeclimate < Formula
     # Alter PATH to ensure `docker' is available
     if Formula["docker"].linked_keg.exist?
       ENV.prepend_path "PATH", Formula["docker"].opt_bin
+    else
+      ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin"
     end
 
     ENV["PREFIX"] = prefix

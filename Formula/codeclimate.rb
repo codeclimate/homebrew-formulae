@@ -13,6 +13,7 @@ class Codeclimate < Formula
     end
 
     ENV["PREFIX"] = prefix
+    ENV["SKIP_ENGINES"] = "1"
 
     system "make", "install"
   end

@@ -17,6 +17,13 @@ class Codeclimate < Formula
     system "make", "install"
   end
 
+  def caveats; <<-EOS.undent
+    To update engines run the following in your project directory:
+
+      $ codeclimate engines:install
+    EOS
+  end
+
   test do
     system "codeclimate", "help"
   end

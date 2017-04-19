@@ -5,6 +5,7 @@
 # Usage: bin/release VERSION
 #
 # Requires sha1sum be installed.
+# (OSX users may need to install brew package named 'md5sha1sum')
 #
 ###
 set -e

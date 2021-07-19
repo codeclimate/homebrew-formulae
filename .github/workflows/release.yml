@@ -1,0 +1,20 @@
+name: Manual Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release'
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      with:
+       token: '${{ secrets.GITHUB_TOKEN }}'
+    - name: Release
+      run: ./bin/release "${{ github.event.inputs.version }}"
+      shell: bash

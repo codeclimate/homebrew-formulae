@@ -1,8 +1,8 @@
 class Codeclimate < Formula
   desc "Code Climate CLI"
   homepage "https://github.com/codeclimate/codeclimate"
-  url "https://github.com/codeclimate/codeclimate/archive/v0.89.0.tar.gz"
-  sha256 "b3ccebad33bb0a5eb68459ebc0db9916667df7a626f86429086262c8f60e0f1c"
+  url "https://github.com/codeclimate/codeclimate/archive/v0.90.0.tar.gz"
+  sha256 "83f3fee26435b453830c4eb17dbd2ed6eb4f7e75c631067e92686767218a2cbf"
 
   def install
     # Alter PATH to ensure `docker' is available
